@@ -6,6 +6,10 @@ class OrganizationsController < ApplicationController
 		@officers = Officer.all
 	end
 
+	def new 
+		@organization = Organization.new
+	end
+
 	def create
 		Organization.create(
 			:name => params[:name])
