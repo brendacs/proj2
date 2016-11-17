@@ -1,16 +1,10 @@
 <h1> Organizations </h1>
 
-<!--This block of code should go under Organization loop-->
-<div>
+<% @organizations.each do |o| %>
+	<div>
 <%= link_to 'Add New Organization', organization_new_path %>
 	<% @organizations.each do |org| %>
 		<p>Name: <%= org.name %></p>
-	<% end %>
-</div>
-<div>
-<%= link_to 'Add New Committee Member', committee_member_new_path %>
-	<% @committee_members.each do |mem| %>
-		<p>Name: <%= mem.name %></p> <%= button_to "Delete", delete_path(id: committee_member), :class => "button medium", :method => :patch %>
 	<% end %>
 </div>
 <div>
@@ -19,16 +13,11 @@
 		<p> Name: <%= of.name %></p>
 	<% end %>
 </div>
-<!--Move this section-->
-
-<% @organizations.each do |o| %>
-	<p>Name: <%= @organizations.name %></p>
-	<%= link_to 'Add New Committee Member', committee_member_new_path %>
+<div>
+<%= link_to 'Add New Committee Member', committee_member_new_path %>
 	<% @committee_members.each do |mem| %>
 		<p>Name: <%= mem.name %></p>
+		<%= button_to "Delete", delete_path(id: committee_member), :class => "button medium", :method => :patch %>
 	<% end %>
-	<%= link_to 'Add New Officer', officer_new_path %>
-	<% @officers.each do |of| %>
-		<p> Name: <%= of.name %></p>
-	<% end %>
+</div>
 <% end %>
