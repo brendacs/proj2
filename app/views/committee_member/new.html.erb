@@ -1,0 +1,6 @@
+<%= simple_form_for @committeeMember, url: {action: "create"} do |p| %>
+  <%= p.input :name %>
+  <%= p.input :year %>
+  <%= p.input :position %>
+  <%= p.button :submit %>
+<% end %>

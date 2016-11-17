@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root to: 'organizations#index'
   get "/organizations", to: "organizations#index"
   get "/organizations/create", to: "organizations#create"
+  get '/committee_member/new', to: 'committee_member#new'
+  post '/committee_member/create', to: 'committee_member#create'
 end
