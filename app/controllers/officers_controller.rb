@@ -15,4 +15,12 @@ class OfficersController < ApplicationController
 		@officer.save
 		redirect_to '/'
 	end
+
+	def show
+		@officer = Officer.find(params[:id])
+	end
+
+	def delete
+		(Officer.find(params[:id])).destroy
+	end
 end

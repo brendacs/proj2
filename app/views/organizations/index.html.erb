@@ -1,10 +1,18 @@
 <h1> Organizations </h1>
 
 <!--This block of code should go under Organization loop-->
+<div>
 <%= link_to 'Add New Committee Member', committee_member_new_path %>
 	<% @committee_members.each do |mem| %>
 		<p>Name: <%= mem.name %></p>
 	<% end %>
+</div>
+<div>
+<%= link_to 'Add New Officer', officer_new_path %>
+	<% @officers.each do |of| %>
+		<p> Name: <%= mem.name %></p>
+	<% end %>
+</div>
 <!--Move this section-->
 
 <% @organizations.each do |o| %>
@@ -12,5 +20,6 @@
 	<%= link_to 'Add New Committee Member', committee_member_new_path %>
 	<% @committee_members.each do |mem| %>
 		<p>Name: <%= mem.name %></p>
-	<% end%>
+	<% end %>
+	<%= link_to 'Add New Officer', officer_new_path %>
 <% end %>
