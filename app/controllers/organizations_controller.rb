@@ -15,14 +15,14 @@ class OrganizationsController < ApplicationController
 		redirect_to '/'
 	end
 
+	def archived
+		@deleted_officers = Officer.only_deleted
+	end
+
 	private
 	
 		def org_params
 			params.require(:organization).permit(:name)
 		end
-
-	def archived
-		@officer = Officer.all
-	end
 
 end

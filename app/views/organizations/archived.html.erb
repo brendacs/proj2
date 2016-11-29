@@ -1,24 +1,18 @@
-<h1>Task Organizer</h1>
-
-<%= link_to 'Add New Organization', organization_new_path %>
+<h1>Archived</h1>
 
 
-	<div>
-		<h3> Officers </h4>
-		<%= link_to 'Add New Officer', officer_new_path %>
-		<% @officer.each do |of| %>
-			<p> Officer Name: <%= of.name %></p>
-			<%= button_to "Delete", officer_delete_path(id: of), :class => "button medium", :method => :patch %>
+<div>
+	<h2>Officers</h2>
 
-			<div>
-				<h4>Committee Members</h4>
-				<%= link_to 'Add New Committee Member', committee_member_new_path %>
-				<% of.committee_members.each do |mem| %>
-				<p>Name: <%= mem.name %></p>
-				<%= button_to "Delete", committee_member_delete_path(id: mem), :class => "button medium", :method => :patch %>
-				<% end %>
-			</div>
+	<% @deleted_officers.each do |of| %>
+		<p><%= of.name %></p>
 
-		<% end %>
-	</div>
+	<% end %>
+
+	<h2>Committee Members</h2>
+
+	<% CommitteeMember.only_deleted do |mem| %>
+		<p><%= mem.name %></p>
+	<% end %>
+</div>
 

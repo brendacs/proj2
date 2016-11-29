@@ -13,14 +13,14 @@
 		<%= link_to 'Add New Officer', officer_new_path %>
 		<% org.officers.each do |of| %>
 			<p> Officer Name: <%= of.name %></p>
-			<%= button_to "Delete", officer_delete_path(id: of), :class => "button medium", :method => :patch %>
+			<%= button_to "Archive", officer_delete_path(id: of), :class => "button medium", :method => :patch %>
 
 			<div>
 				<h4>Committee Members</h4>
 				<%= link_to 'Add New Committee Member', committee_member_new_path %>
 				<% of.committee_members.each do |mem| %>
 				<p>Name: <%= mem.name %></p>
-				<%= button_to "Delete", committee_member_delete_path(id: mem), :class => "button medium", :method => :patch %>
+				<%= button_to "Archive", committee_member_delete_path(id: mem), :class => "button medium", :method => :patch %>
 				<% end %>
 			</div>
 
