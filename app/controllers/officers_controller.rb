@@ -9,15 +9,15 @@ class OfficersController < ApplicationController
 	
 	def create
 		@officer = Officer.new
-		@officer.name = params[:name]
-		@officer.year = params[:year]
-		@officer.position = params[:position]
-		@officer.save
+		@officer.name = officer_params[:name]
+		@officer.year = officer_params[:year]
+		@officer.organization = Organization.where(name: officer_params[:organization])
+		@officer.position = officer_params[:position]
 		redirect_to '/'
 	end
 
-	def show
-		@officer = Officer.find(params[:id])
+	def officer_params
+		params.require(:officer).permit(:name, :year, :organization, :position)
 	end
 
 	def delete

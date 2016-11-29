@@ -11,8 +11,12 @@ class OrganizationsController < ApplicationController
 	end
 
 	def create
-		Organization.create(
-			:name => params[:name])
+		Organization.create(org_params)
 		redirect_to '/'
 	end
+
+	def org_params
+		params.require(:organization).permit(:name)
+	end
+
 end
