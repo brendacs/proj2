@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+asp = Organization.create(name: "Alpha Sigma Phi")
+carson = Officer.create(name: "Carson", year: "2", position: "Treasurer", organization: asp)
+CommitteeMember.create(name: "Underling", year: "1", position: "Finance Committee Member", officer: carson)
+
+aaa = Organization.create(name: "AAA")

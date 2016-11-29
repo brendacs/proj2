@@ -8,11 +8,7 @@ class CommitteeMemberController < ApplicationController
 	end
 
 	def create
-		@committeeMember = CommitteeMember.new
-		@committeeMember.name = params[:name]
-		@committeeMember.year = params[:year]
-		@committeeMember.position = params[:position]
-		@committeeMember.save
+		@committeeMember = CommitteeMember.create(committee_member_params)
 		redirect_to '/'
 	end
 
@@ -22,5 +18,12 @@ class CommitteeMemberController < ApplicationController
 
 	def delete
 		(CommitteeMember.find(params[:id])).destroy
+		redirect_to '/'
 	end
+
+	private
+
+		def committee_member_params
+			params.require(:committee_member).permit(:name, :year, :officer_id, :position)
+		end
 end

@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   get '/committee_member/new', to: 'committee_member#new'
   get '/committee_member/create', to: 'committee_member#create'
   post '/committee_member/create', to: 'committee_member#create'
+  patch '/committee_member/delete', to: 'committee_member#delete'
 
   get '/officer/new', to: 'officers#new'
   post '/officer/create', to: 'officers#create'
-  
-  patch '/delete', to: 'committee_member#delete'
+  patch '/officer/delete', to: 'officers#delete'
+
 end

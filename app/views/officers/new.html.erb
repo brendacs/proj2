@@ -1,7 +1,7 @@
 <%= simple_form_for @officer, url: {action: "create"} do |p| %>
   <%= p.input :name %>
   <%= p.input :year %>
-  <%= p.input :organization %>
+  <%= Organization %>
   <%= p.collection_select :organization_id, Organization.order(:name), :id, :name %>
   <%= p.input :position %>
   <%= p.button :submit %>

@@ -1,6 +1,8 @@
 <%= simple_form_for @committeeMember, url: {action: "create"} do |p| %>
   <%= p.input :name %>
   <%= p.input :year %>
+  <%= Officer %>
+  <%= p.collection_select :officer_id, Officer.order(:name), :id, :name %>
   <%= p.input :position %>
   <%= p.button :submit %>
 <% end %>

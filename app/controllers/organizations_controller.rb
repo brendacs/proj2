@@ -15,8 +15,13 @@ class OrganizationsController < ApplicationController
 		redirect_to '/'
 	end
 
-	def org_params
-		params.require(:organization).permit(:name)
+	private
+	
+		def org_params
+			params.require(:organization).permit(:name)
+		end
+
+	def archived
 	end
 
 end
