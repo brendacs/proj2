@@ -1,17 +1,12 @@
 <h1>Task Organizer</h1>
 
-<%= link_to 'Archived Members', archived_path %>
-
 <%= link_to 'Add New Organization', organization_new_path %>
 
-<div>
-	<% @organizations.each do |org| %>
-	<h2>Organization: <%= org.name %></h2>
 
 	<div>
 		<h3> Officers </h4>
 		<%= link_to 'Add New Officer', officer_new_path %>
-		<% org.officers.each do |of| %>
+		<% @officer.each do |of| %>
 			<p> Officer Name: <%= of.name %></p>
 			<%= button_to "Delete", officer_delete_path(id: of), :class => "button medium", :method => :patch %>
 
@@ -26,8 +21,4 @@
 
 		<% end %>
 	</div>
-
-<% end %>
-
-</div>
 

@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   post '/officer/create', to: 'officers#create'
   patch '/officer/delete', to: 'officers#delete'
 
+  get '/archived', to: 'organizations#archived'
+
 end

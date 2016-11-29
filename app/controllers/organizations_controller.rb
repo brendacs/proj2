@@ -22,6 +22,7 @@ class OrganizationsController < ApplicationController
 		end
 
 	def archived
+		@officer = Officer.all
 	end
 
 end
