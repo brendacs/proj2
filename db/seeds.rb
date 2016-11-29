@@ -7,7 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 asp = Organization.create(name: "Alpha Sigma Phi")
-carson = Officer.create(name: "Carson", year: "2", position: "Treasurer", organization: asp)
-CommitteeMember.create(name: "Underling", year: "1", position: "Finance Committee Member", officer: carson)
+carson = Officer.create(name: "Carson", year: 2, position: "Treasurer", organization: asp)
+CommitteeMember.create(name: "Underling", year: 1, position: "Finance Committee Member", officer: carson)
+
+elim = CommitteeMember.create(name: "Eliminated Underling", year: 1, position: "Finance Committee Member", officer: carson)
+elim.destroy
 
 aaa = Organization.create(name: "AAA")
