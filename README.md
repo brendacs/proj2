@@ -3,7 +3,7 @@
 
 **Title:** Organizations Organizer
 **Team Members:** Aaron Xu, Brenda Zhang, Carson Lian, Daniel Shiferaw  
-**Demo Link:** ------------
+**Demo Link:** https://www.youtube.com/watch?v=bq-YEHtTsLc
 
 
 Idea: An application where an organization can organize its members
