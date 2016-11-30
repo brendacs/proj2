@@ -1,18 +1,25 @@
-<h1>Archived</h1>
+<head>
+	<%= stylesheet_link_tag 'main' %>
+	<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Numans|Questrial|Roboto" rel="stylesheet">
+</head>
 
+<body class="archives">
 
-<div>
-	<h2>Officers</h2>
+	<h1>Archived</h1>
 
-	<% @deleted_officers.each do |of| %>
-		<p><%= of.name %></p>
+	<div>
+		<h2>Officers</h2>
 
-	<% end %>
+		<% @deleted_officers.each do |of| %>
+			<p><%= of.name %></p>
 
-	<h2>Committee Members</h2>
+		<% end %>
 
-	<% CommitteeMember.only_deleted do |mem| %>
-		<p><%= mem.name %></p>
-	<% end %>
-</div>
+		<h2>Committee Members</h2>
 
+		<% CommitteeMember.only_deleted do |mem| %>
+			<p><%= mem.name %></p>
+		<% end %>
+	</div>
+
+</body>

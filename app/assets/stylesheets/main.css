@@ -95,7 +95,7 @@ a:hover{
 
 /* forms */
 
-.new-form{
+.new-form, .archives{
 	padding: 50px;
 }
 
