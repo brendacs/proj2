@@ -1,33 +1,65 @@
-<h1>Task Organizer</h1>
+<head>
+	<%= stylesheet_link_tag 'main' %>
+	<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Numans|Questrial|Roboto" rel="stylesheet">
+</head>
 
-<%= link_to 'Archived Members', archived_path %>
+<body>
 
-<%= link_to 'Add New Organization', organization_new_path %>
+<header>
 
-<div>
-	<% @organizations.each do |org| %>
-	<h2>Organization: <%= org.name %></h2>
+	<h1>Organization Organizer</h1>
+	<p id='desc'>You can add officers after you add your organization. <br/> Once you add officers, you can also add the committee members that work under them.</p>
 
-	<div>
-		<h3> Officers </h4>
-		<%= link_to 'Add New Officer', officer_new_path %>
-		<% org.officers.each do |of| %>
-			<p> Officer Name: <%= of.name %></p>
-			<%= button_to "Archive", officer_delete_path(id: of), :class => "button medium", :method => :patch %>
+	<%= link_to 'Add New Organization', organization_new_path%>
 
-			<div>
-				<h4>Committee Members</h4>
-				<%= link_to 'Add New Committee Member', committee_member_new_path %>
-				<% of.committee_members.each do |mem| %>
-				<p>Name: <%= mem.name %></p>
-				<%= button_to "Archive", committee_member_delete_path(id: mem), :class => "button medium", :method => :patch %>
+
+</header>
+
+<hr>
+
+	<div id="organization">
+
+		<% @organizations.each do |org| %>
+		<h2><%= org.name %></h2>
+
+
+		<div>
+				<div class='pseudo-button'><%= link_to 'Add New Officer', officer_new_path %></div>
+
+				<% org.officers.each do |of| %>
+				<hr id="officer-line">
+				<h3>Officer</h3>
+				<p class="officer-name"><%= of.name %></p>
+
+				<%= button_to "Archive", officer_delete_path(id: of), :class => "button large", :method => :patch %>
+
+				<div>
+
+
+					<h3>Committee Members</h3>
+					<div class='pseudo-button'><%= link_to 'Add New Committee Member', committee_member_new_path %></div>
+
+					<% of.committee_members.each do |mem| %>
+					<p><%= mem.name %></p>
+
+					<%= button_to "Archive", committee_member_delete_path(id: mem), :class => "button medium", :method => :patch %>
+
+					<% end %>
+
+				</div>
+
 				<% end %>
+
 			</div>
 
-		<% end %>
+			<hr>
+
+			<% end %>
+
+			<h2 id="archives">Archives</h2>
+			<div class='pseudo-button'><%= link_to 'Archived Members', archived_path %></div>
+
 	</div>
 
-<% end %>
-
-</div>
+</body>
 
