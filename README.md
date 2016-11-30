@@ -13,8 +13,8 @@ Idea: An application where an organization can organize its members
 
 
 ### Organization
-Has name attribute
-Has many officers and committee members
+* Has name attribute
+* Has many officers and committee members
 
 
 ### Officer
