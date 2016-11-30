@@ -10,7 +10,7 @@
 	<%= simple_form_for @committeeMember, url: {action: "create"} do |p| %>
 	  <%= p.input :name, placeholder: 'Jane Doe' %>
 	  <%= p.input :year, placeholder: '2' %>
-	  <%= Officer %>
+	  <label><%= Officer %></label>
 	  <%= p.collection_select :officer_id, Officer.order(:name), :id, :name %>
 	  <%= p.input :position, placeholder: 'Design Committee Member' %>
 	  <%= p.button :submit %>
