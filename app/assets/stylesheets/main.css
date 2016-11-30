@@ -13,8 +13,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     vertical-align: baseline;
 }
 
-/* body */
-
 body{
 	font-family: Questrial;
 	text-align: center;
@@ -22,8 +20,10 @@ body{
 	background-color: #E8FCFC;
 }
 
+/* body of main page */
+
 header{
-	padding-top: 30px;
+	padding-top: 50px;
 	padding-bottom: 40px;
 }
 
@@ -34,6 +34,7 @@ h1, h2{
 
 h1{
 	font-size: 40px;
+	padding-bottom: 20px;
 }
 
 h2{
@@ -90,4 +91,26 @@ a:hover{
 
 #archives{
 	color: gray;
+}
+
+/* forms */
+
+.new-form{
+	padding: 50px;
+}
+
+input, select{
+	height: 20px;
+	width: 200px;
+	padding: 4px 6px;
+	margin: 20px;
+	font-size: 14px;
+	font-family: Questrial;
+}
+
+label{
+	margin: 20px;
+	display: inline-block;
+	font-size: 20px;
+	width: 120px;
 }

@@ -1,4 +1,15 @@
-<%= simple_form_for @organization, url: {action: "create"} do |p| %>
-  <%= p.input :name %>
-  <%= p.button :submit %>
-<% end %>
+<head>
+	<%= stylesheet_link_tag 'main' %>
+	<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Numans|Questrial|Roboto" rel="stylesheet">
+</head>
+
+<body class="new-form">
+
+<h1>New organization name</h1>
+
+	<%= simple_form_for @organization, url: {action: "create"} do |p| %>
+	  <%= p.input :name, placeholder: 'Example Organization' %>
+	  <%= p.button :submit %>
+	<% end %>
+
+</body>

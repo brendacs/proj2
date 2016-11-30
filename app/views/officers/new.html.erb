@@ -1,8 +1,19 @@
-<%= simple_form_for @officer, url: {action: "create"} do |p| %>
-  <%= p.input :name %>
-  <%= p.input :year %>
-  <%= Organization %>
-  <%= p.collection_select :organization_id, Organization.order(:name), :id, :name %>
-  <%= p.input :position %>
-  <%= p.button :submit %>
-<% end %>
+<head>
+	<%= stylesheet_link_tag 'main' %>
+	<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Numans|Questrial|Roboto" rel="stylesheet">
+</head>
+
+<body class="new-form">
+
+<h1>New officer information</h1>
+
+	<%= simple_form_for @officer, url: {action: "create"} do |p| %>
+	  <%= p.input :name, placeholder: 'John Smith' %>
+	  <%= p.input :year, placeholder: '3' %>
+	  <label><%= Organization %></label>
+	  <%= p.collection_select :organization_id, Organization.order(:name), :id, :name %>
+	  <%= p.input :position, placeholder: 'Marketing Committee Chair' %>
+	  <%= p.button :submit %>
+	<% end %>
+
+</body>
