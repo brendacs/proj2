@@ -12,26 +12,26 @@ Idea: An application where an organization can organize its members
 ## Models and Descriptions
 
 
-Organization
+### Organization
 Has name attribute
 Has many officers and committee members
 
 
-Officer
-Has name, year, organization it belongs to, and position attributes
-Has many committee members and belongs to an organization 
+### Officer
+* Has name, year, organization it belongs to, and position attributes
+* Has many committee members and belongs to an organization 
 
 
-Committee Member
-Has name, year, name of officer assigned by and position as attributes
-Belongs to officer and organization
+### Committee Member
+* Has name, year, name of officer assigned by and position as attributes
+* Belongs to officer and organization
 
 
 ## Features
-User can add new organization
-User can add officers to each organization
-User can committee members under each officer
-User can archive members
+* User can add new organization
+* User can add officers to each organization
+* User can committee members under each officer
+* User can archive members
 
 
 ## Division of Labor
