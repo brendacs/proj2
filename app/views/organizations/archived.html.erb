@@ -17,7 +17,7 @@
 
 		<h2>Committee Members</h2>
 
-		<% CommitteeMember.only_deleted do |mem| %>
+		<% @deleted_committee_members.each do |mem| %>
 			<p><%= mem.name %></p>
 		<% end %>
 	</div>

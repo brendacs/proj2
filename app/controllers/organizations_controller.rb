@@ -17,6 +17,7 @@ class OrganizationsController < ApplicationController
 
 	def archived
 		@deleted_officers = Officer.only_deleted
+		@deleted_committee_members = CommitteeMember.only_deleted
 	end
 
 	private
